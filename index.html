@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Nivel 3.2</title>
+</head>
+<body>
+    <div class="calendar-container">
+        <div class="calendar-header">
+            <button id="prev">&lt;</button>
+            <h2 id="month-year"></h2>
+            <button id="next">&gt;</button>
+        </div>
+        <div class="calendar-days">
+        <div>Dom</div><div>Lun</div><div>Mar</div><div>Mié</div><div>Jue</div><div>Vie</div><div>Sáb</div>
+        </div>
+        <div id="calendar-grid" class="calendar-grid"></div>
+    </div>
+
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <p id="modal-text"></p>
+            <button id="close-modal">Cerrar</button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
