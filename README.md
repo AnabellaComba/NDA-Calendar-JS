@@ -18,13 +18,18 @@ pero parece ser que en este caso de tu jefe no obtendras respuestas, hay que val
 4. ¿Una página puede ser 100% dinámica?
 5. Explica las modificaciones que hiciste con tus palabras linea por linea
 
-1.
-
-
-
+1.Sí, podés encadenar eventos o ejecutar un evento dentro de otro en JavaScript, pero depende de lo que se desee realizar:
+Ejecutar un evento dentro del manejador de otro
+Podés llamar a otra función (que también se usa como evento) dentro del primer evento
+Disparar otro evento manualmente (dispatchEvent)
+Podés disparar un evento de otro elemento cuando se ejecute el primero
+Escuchar múltiples eventos en la misma función
+Podés añadir varios eventos al mismo elemento que llamen a una misma función
+Si lo que querés es que un evento ocurra después de otro de forma automática, dispatchEvent es la forma más controlada.
 
 
 2.
+En JavaScript, crear (o más bien asignar) un evento a un elemento tiene varias sintaxis
 
 
 
