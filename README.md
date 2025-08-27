@@ -30,13 +30,49 @@ Si lo que querés es que un evento ocurra después de otro de forma automática,
 
 2.
 En JavaScript, crear (o más bien asignar) un evento a un elemento tiene varias sintaxis
+ -Usando addEventListener (la forma más recomendada)
+ Se usaría: elemento.addEventListener(tipoEvento, funcionCallback, useCapture);
+ tipoEvento → nombre del evento sin el prefijo on (ej: 'click', 'mouseover').
+funcionCallback → la función que se ejecuta cuando ocurre el evento.
+useCapture → (opcional, false por defecto) indica si se usa la fase de captura.
+EJ const boton = document.getElementById('miBoton');
+boton.addEventListener('click', function() {console.log('Botón clickeado');});
 
+ -Usando una función anónima con addEventListener
+document.querySelector('#miBoton').addEventListener('click', () => {
+  console.log('Click con arrow function');});
 
+-Asignando directamente a la propiedad del evento (onEvento)
+Esta es la forma antigua, menos flexible porque solo permite un manejador por tipo de evento:
+const boton = document.getElementById('miBoton');
+boton.onclick = function() {console.log('Click usando onClick');};
 
+-Creando un evento personalizado con new Event()
+const miEvento = new Event('nombreEvento');
+elemento.dispatchEvent(miEvento);
 
+EJ
+const boton = document.getElementById('miBoton');
+// Crear evento
+const eventoPersonalizado = new Event('saludo');
+// Escuchar evento
+boton.addEventListener('saludo', () => {
+  console.log('¡Hola! Este es un evento personalizado');});
+// Disparar evento
+boton.dispatchEvent(eventoPersonalizado);
 
 
 3.
+Eventos de Mouse
+wheel → para la rueda del mouse.
+Eventos de Teclado
+Eventos de Formulario
+Eventos de Carga y Ventana
+Eventos de Drag & Drop
+Eventos de Touch (en móviles)
+transitionend → cuando termina una animación CSS.
+animationend → cuando termina una animación CSS.
+copy, paste, cut → para manejar portapapeles.
 
 
 
@@ -45,8 +81,19 @@ En JavaScript, crear (o más bien asignar) un evento a un elemento tiene varias 
 
 
 4.
+Sí, una página puede ser 100% dinámica, y es común en SPAs(Aplicaciones de una sola página ). Sin embargo, muchas veces se mezcla contenido estático + dinámico por motivos de rendimiento y SEO.
 
+Ventajas
 
+Experiencia más rápida (menos recargas).
+Interactividad avanzada.
+Ideal para apps complejas.
+
+Desventajas
+
+SEO complicado (Google puede indexar, pero cuesta).
+Dependencia total de JS (si falla, la página queda vacía).
+Carga inicial más lenta (todo se arma después).
 
 
 
