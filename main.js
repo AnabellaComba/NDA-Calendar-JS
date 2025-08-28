@@ -37,11 +37,29 @@ window.addEventListener('DOMContentLoaded', () => {
             ) {
                 dayEl.classList.add('today');
             }
+            dayEl.addEventListener('click', () => {
+                const modal = document.getElementById('modal');
+                const modalText = document.getElementById('modal-text');
+                const monthNames = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+                    'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
 
+                modalText.textContent = `Seleccionaste: ${day} de ${monthNames[month]} de ${year}`;
+                modal.style.display = 'flex';
+            });
             calendarGrid.appendChild(dayEl);
         }
     }
+    // Cerrar el modal
+document.getElementById('close-modal').addEventListener('click', () => {
+    document.getElementById('modal').style.display = 'none';
+});
 
+// También cerrar si se hace clic fuera del contenido
+document.getElementById('modal').addEventListener('click', (e) => {
+    if (e.target.id === 'modal') {
+        e.currentTarget.style.display = 'none';
+    }
+});
     prevBtn.addEventListener('click', () => {
         date.setMonth(date.getMonth() - 1);
         renderCalendar();
