@@ -27,7 +27,6 @@ Escuchar múltiples eventos en la misma función
 Podés añadir varios eventos al mismo elemento que llamen a una misma función
 Si lo que querés es que un evento ocurra después de otro de forma automática, dispatchEvent es la forma más controlada.
 
-
 2.
 En JavaScript, crear (o más bien asignar) un evento a un elemento tiene varias sintaxis
  -Usando addEventListener (la forma más recomendada)
@@ -61,7 +60,6 @@ boton.addEventListener('saludo', () => {
 // Disparar evento
 boton.dispatchEvent(eventoPersonalizado);
 
-
 3.
 Eventos de Mouse
 wheel → para la rueda del mouse.
@@ -73,12 +71,6 @@ Eventos de Touch (en móviles)
 transitionend → cuando termina una animación CSS.
 animationend → cuando termina una animación CSS.
 copy, paste, cut → para manejar portapapeles.
-
-
-
-
-
-
 
 4.
 Sí, una página puede ser 100% dinámica, y es común en SPAs(Aplicaciones de una sola página ). Sin embargo, muchas veces se mezcla contenido estático + dinámico por motivos de rendimiento y SEO.
@@ -94,11 +86,6 @@ Desventajas
 SEO complicado (Google puede indexar, pero cuesta).
 Dependencia total de JS (si falla, la página queda vacía).
 Carga inicial más lenta (todo se arma después).
-
-
-
-
-
 
 5.
 
