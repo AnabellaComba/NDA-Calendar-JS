@@ -88,10 +88,15 @@ Dependencia total de JS (si falla, la página queda vacía).
 Carga inicial más lenta (todo se arma después).
 
 5.
-
-
-
-
+Agregué dos cosas principales:
+1- Dentro del bucle for que genera los días del mes → añadí un addEventListener a cada día.
+2- Fuera de renderCalendar() → agregué el evento para cerrar el modal.
+Al hacer click escucha la selección del día.
+Obtiene el modal (#modal) y el texto dentro del modal (#modal-text) que se encuentran en el HTML.
+Genera el texto dinámico con la fecha seleccionada:"Seleccionaste: 15 de Agosto de 2025" .
+Muestra el modal cambiando su estilo a display: flex.
+Para poder cerrar el modal agregué dos formas, una cierra al hacer click al botón cerrar y la otra cuando haces click por fuera del cartel.
+Esto se hace verificando que el clic fue en el div principal (id="modal") y no en el contenido interno.
 
 
 
